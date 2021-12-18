@@ -8,12 +8,14 @@
 >
 > 文章链接https://mp.weixin.qq.com/s/2AYLIFfa-_cIF2EER5emhg
 
+## 关于我
 
+大家好，我是坚果，目前是华为云享专家，51CTO博客首席体验官，专注于大前端技术的分享，包括Flutter,小程序,安卓，VUE，JavaScript。
 
 
 ___
 
-## 获取方式
+## 主题获取方式
 
 > 如果GitHub图片加载不出来，可以去公众号“坚果前端”，回复typora主题
 > 
