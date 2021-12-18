@@ -1,0 +1,706 @@
+:root {
+  /*嘉然*/
+  --color-main: #E799B0;
+  --color-main-semitransparent: #e799b080;
+  --color-1: #fcf2f585;
+  --color-1-notrans: #fcf2f5;
+  --color-2: #f9e6eb; 
+  --color-3: #f6d9e1;
+  --color-4: #f3ccd8;
+  --color-5: #f0bfce;
+  --color-6: #edb3c4;
+  --color-7: #eaa6ba;
+  --color-8: #de7292;
+  --color-8-trans: #de729285;
+  --color-9: #e99eb4;
+  --color-10: #fbd3ea85;
+  --color-11: #B5D6FC;
+
+  --background-img: url("./jiaran/diana.png");
+
+  --control-text-color: #777;
+  --select-text-bg-color: var(--color-11);  /* specially set for source mode */
+  --search-select-bg-color: var(--color-8);
+
+  --side-bar-bg-color: var(--color-main-semitransparent);
+  --window-border: 2px solid var(--color-main);
+
+  --title-color: var(--color-main);
+  --text-color: #34495e;
+  --font-sans-serif: "思源宋体", "Source Han Sans CN", "Ubuntu", "Source Han Sans SC", "Source Sans Pro", sans-serif !important;
+  --font-monospace: "Fira Code", "思源黑体", "Noto Sans CJK SC", monospace !important;
+
+  --base-font: -apple-system, "Fira Code", "思源黑体", "Noto Sans", "Helvetica Neue", Helvetica,
+    "Nimbus Sans L", Arial, "Liberation Sans", "Noto Sans CJK SC", "PingFang SC",
+    "Hiragino Sans GB", "Source Han Sans SC", "Source Han Sans CN",
+    "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti",
+    SimHei, "WenQuanYi Zen Hei Sharp", "Ubuntu", "Source Sans Pro", monospace;
+
+    --title-font: "Noto Serif CJK SC", "Songti SC", "Source Han Serif SC",
+    "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun,
+    SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN",
+    "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU,
+    "Ubuntu", "Source Sans Pro", serif;
+  --em-font: "Noto Serif CJK SC" ， "Songti SC", "Source Han Serif SC",
+    "Source Han Serif CN", STSong, "AR PL New Sung", "AR PL SungtiL GB", NSimSun,
+    SimSun, "TW\-Sung", "WenQuanYi Bitmap Song", "AR PL UMing CN",
+    "AR PL UMing HK", "AR PL UMing TW", "AR PL UMing TW MBE", PMingLiU, MingLiU,
+    "Ubuntu", "Source Sans Pro", serif;
+  --quota-font: "EB Garamond", Baskerville, Georgia, "Liberation Serif",
+    "TW-Kai", "Kaiti SC", STKaiti, "AR PL UKai CN", "AR PL UKai HK",
+    "AR PL UKai TW", "AR PL UKai TW MBE", "AR PL KaitiM GB", KaiTi, KaiTi_GB2312,
+    DFKai-SB, "TW\-Kai", serif;
+  --monospace: "Fira Code", "思源黑体", "Noto Sans", "Noto Sans CJK SC", "Cascadia code", "Sarasa Term SC", Monaco, "Deja Vu Sans Mono",
+    Consolas, "Lucida Console", "Andale Mono", "Fira Code", "Roboto Mono",
+    monospace, Courier;
+
+    --shadow: var(--color-5) 0px 5px 10px;
+}
+
+/* 窗口框颜色 */
+header {
+  background-color: initial;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: initial;
+}
+
+body {
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6rem;
+  letter-spacing: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+content {
+    background: var(--color-3);
+}
+
+/* set default mode's selected color */
+.in-text-selection, ::selection {
+  background-color: var(--color-3);
+}
+
+#write {
+  font-family: var(--base-font);
+  background-color: #fff !important; 
+  /*width: 90%;*/
+  height: auto;
+
+  background: var(--background-img) no-repeat;
+  background-size: 10%;
+  background-position: 90% bottom;
+  background-attachment: fixed;
+
+  /*margin-top: 30px;
+  margin-bottom: 15px;
+  padding-left: 80px;
+  padding-right: 80px;*/
+  margin: 0 auto;
+  padding: 4rem;
+  padding-bottom: 100px;
+
+  /*border-radius: 10px;*/
+  box-shadow: 0px 5px 10px var(--color-main);
+  z-index: 0;
+}
+
+#write p {
+  line-height: 1.6rem;
+  word-spacing: 0.05rem;
+}
+
+/* 调整#write区下的元素属性 */
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+  width: 100%;  /* 不调整为继承则导致宽度异常 */
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: var(--color-5);
+  text-decoration: none;
+}
+#write a:hover {
+  border-bottom: 1px solid var(--color-5);
+  color: var(--color-5);
+  text-decoration: none;
+}
+.md-content {
+  color: var(--color-7);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  /* font-weight: bold; */
+  font-weight: 400;
+  line-height: 1.4;
+  cursor: text;
+  color: var(--title-color);
+  font-family: var(--title-font);
+}
+
+h1 tt,
+h1 code {
+  font-size: inherit !important;
+}
+h2 tt,
+h2 code {
+  font-size: inherit !important;
+}
+h3 tt,
+h3 code {
+  font-size: inherit !important;
+}
+h4 tt,
+h4 code {
+  font-size: inherit !important;
+}
+h5 tt,
+h5 code {
+  font-size: inherit !important;
+}
+h6 tt,
+h6 code {
+  font-size: inherit !important;
+}
+
+h1 {
+  padding-bottom: 0.4rem;
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 0.3em;
+  font-size: 2.2em;
+  line-height: 1.2;
+  margin: 1.6em auto 1em;
+}
+h1:after {
+  content: "";
+  display: block;
+  margin: 0.2em auto 0;
+  width: 100px;
+  height: 2px;
+  border-bottom: 2px solid var(--title-color);
+}
+
+h2 {
+  margin: 1.4em auto 0.8em;
+  padding-left: 10px;
+  line-height: 1.4;
+  font-size: 1.8em;
+  border-left: 9px solid var(--title-color);
+  border-bottom: 1px solid var(--title-color);
+}
+h3 {
+  font-size: 1.5rem;
+  margin: 1.2em auto 0.5em;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h6 {
+  font-size: 1.1rem;
+}
+
+p,
+blockquote,
+ul,
+ol,
+dl,
+table {
+  margin: 0.8em 0;
+}
+
+/* horizontal rule */
+hr {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+/* 列表 */
+li > ol,
+li > ul {
+  margin: 0 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul,
+ol {
+  padding-left: 2rem;
+}
+
+ul:first-child,
+ol:first-child {
+  margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
+}
+
+#write ol li,
+ul li {
+  padding-left: 0.1rem;
+}
+
+
+
+
+#filesearch-case-option-btn,
+#filesearch-word-option-btn {
+  background: var(--color-main);
+}
+
+#typora-sidebar {
+  color: #404040;
+  font-weight: bold;
+}
+
+#sidebar-files-menu {
+  border: 2px solid var(--color-main);
+}
+
+.file-list-item {
+  color: #000;
+  border-bottom: var(--window-border);
+  overflow: hidden;
+}
+
+.file-list-item.active {
+  background-color: var(--color-8-trans);
+  color: #000;
+}
+
+.file-list-item-file-name {
+  font-weight: 700;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  line-height: 2;
+}
+
+.file-node-content {
+  padding-top: 6px;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.file-node-content:active {
+  background-color: var(--color-8);
+}
+
+.active .file-node-content {
+  font-weight: bold;
+}
+
+.ty-on-drag-enter {
+  background-color: var(--color-main);
+}
+
+.file-node-content:hover {
+  cursor: pointer;
+  background: var(--color-3);
+  border-radius: 10px;
+}
+
+.file-node-icon,
+.file-node-open-state {
+  padding-left: 10px;
+  margin-right: 6px;
+  float: left;
+}
+
+#typora-sidebar .file-list-item.file-library-node:not(.active):hover {
+  background: var(--color-3);
+}
+
+#typora-sidebar .file-tree-node.file-library-file-node.active .file-node-background {
+  background: var(--color-main);
+  border-left: 5px solid #404040;
+}
+
+.sidebar-footer {
+  background: var(--color-5);
+}
+
+/* 搜索栏位置调整 */
+.ty-sidebar-search-panel {
+  border-bottom-color: var(--color-9);
+  padding-top: 16px;
+  padding-bottom: 10px;
+}
+
+/* 搜索选项定位 */
+.ty-sidebar-search-panel .searchpanel-search-option-btn{
+  top: 18px;
+}
+
+/* 搜索关闭按钮 */
+#close-outline-filter-btn {
+  position: relative;
+  left: 1px;
+  bottom: 1px;
+}
+
+.html-for-mac #file-library-search-input {
+  font-weight: normal;
+  color: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item:hover {
+  background: var(--color-7);
+}
+
+#typora-sidebar #outline-content .outline-item:hover {
+  background: var(--color-5);
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .show+.menuitem-group-label.show {
+  border-color: var(--color-main);
+}
+
+#typora-sidebar #ty-sidebar-footer {
+  border-top: var(--window-border);
+  color: #202020;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu li>a:hover {
+  background: var(--color-6);
+  border-radius: 5px
+}
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu {
+  background: var(--color-3);
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active {
+  background: var(--color-3);
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn.active,
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu .ty-side-sort-btn:hover {
+  color: #576690;
+}
+
+
+.CodeMirror-lines {
+    font-family: var(--monospace);
+    padding-left: 4px;
+}
+
+/* 代码高亮样式 */
+.cm-s-inner span.cm-meta { color: #FF1717; }
+.cm-s-inner span.cm-comment { color: #8f5536; }
+.cm-s-inner span.cm-atom { color: #aa759f; }
+.cm-s-inner span.cm-number { color: #aa759f; }
+
+.cm-s-inner span.cm-property, .cm-s-inner span.cm-attribute { color: #90a959; }
+.cm-s-inner span.cm-keyword { color: #ac4142; }
+.cm-s-inner span.cm-string { color: #d28445; }
+
+.cm-s-inner span.cm-variable { color: #90a959; }
+.cm-s-inner span.cm-variable-2 { color: #6a9fb5; }
+.cm-s-inner span.cm-def { color: #d28445; }
+.cm-s-inner span.cm-bracket { color: #202020; }
+.cm-s-inner span.cm-tag { color: #ac4142; }
+.cm-s-inner span.cm-link { color: #aa759f; }
+.cm-s-inner span.cm-error { background: #ac4142; color: #505050; }
+
+.cm-s-inner .CodeMirror-matchingbracket { color: #f5f5f5 !important; background-color: #6A9FB5 !important}
+
+.code-tooltip {
+    font-family: var(--monospace);
+    box-shadow: 0 2px 2px 0 var(--color-5);
+    font-weight: bold;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid var(--color-4);
+    background-image: var(--background-img);
+    background-size: 10%;
+    background-position: 90% bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: var(--color-1-notrans);
+    /*background-color: #fcf2f5;*/
+    border-radius: 3px;
+    /*padding-left: 5px;*/
+    padding:  2px 4px;
+    font-size: 0.9em;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+.mathjax-block {
+  box-shadow: 0 2px 2px 0 var(--color-5);
+}
+
+blockquote {
+  border-left: 0.3rem solid var(--color-main);
+  border-radius: 0.4rem;
+  padding: 10px 15px;
+  color: #777;
+  /*background-color: var(--pink-4);
+  box-shadow: var(--color-7);*/
+  font-family: var(--quota-font);
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid var(--color-5);
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: var(--color-1);
+}
+table th {
+    border: 1px solid var(--color-5);
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid var(--color-5);
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+  margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+  margin-bottom: 0;
+}
+
+
+/* 粗体 */
+#write strong {
+  padding: 0 2px;
+  color: var(--color-8);
+  font-weight: 600;
+  font-family: var(--em-font);
+}
+
+/* 斜体 */
+#write em {
+  padding: 0 5px 0 2px;
+  font-family: var(--em-font);
+  /* font-style: normal;
+  color: #4abdeb; */
+}
+
+
+.md-reset {
+  background-color: #fff;
+}
+
+.md-reset .md-grid-ext {
+  background-color: var(--color-7);
+}
+
+.md-reset .md-grid-ext a.md-active {
+  background-color: var(--color-3);
+}
+
+.md-reset a.md-active {
+  background-color: var(--color-3);
+}
+
+#write mark {
+  background-color: var(--color-10);
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+
+#write del {
+  padding: 1px 2px;
+}
+
+/* 图片 */
+.md-image > .md-meta {
+  border-radius: 3px;
+  font-family: var(--monospace);
+  padding: 2px 0px 0px 4px;
+  font-size: 0.9em;
+  color: inherit;
+}
+
+/* 图片靠左显示 */
+p .md-image:only-child {
+  width: auto;
+  text-align: left;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.md-tag {
+  color: inherit;
+}
+
+/* 默认有阴影 */
+#write img {
+  max-width: 100% !important;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  border: 0px;
+}
+
+element.style {
+  width: calc(100% - 18px);
+}
+
+/* 设置一体化菜单头 */
+.megamenu-menu-header {
+  border-bottom: 1px solid var(--color-1-notrans);
+}
+
+/* 设置一体化菜单颜色 */
+.megamenu-menu {
+  background-color: var(--color-8) ;
+}
+
+/* checkbox */
+input[type="checkbox"]:before {
+  content: "";
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: middle;
+  text-align: center;
+  border: 0px;
+  border-radius: 3px;
+  background-color: var(--color-5);
+  margin-top: -0.5rem;
+  margin-left: -0.1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  color: var(--color-6);
+}
+
+/* checkbox checked*/
+input[type="checkbox"]:checked:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  color: #808080;
+  font-weight: bold;
+}
+
+/* checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+  content: "\2713";
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  color: #808080;
+  font-weight: bold;
+}
+
+/* radio */
+input[type="radio"]:before {
+  content: "";
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: middle;
+  text-align: center;
+  border: 0px;
+  border-radius: 0.55rem;
+  background-color: var(--color-5);
+  margin-top: -0.4rem;
+  margin-left: -0.1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+  content: "\25CF";
+  font-size: 1rem;
+  line-height: 1rem;
+  color: var(--color-6);
+}
+
+/* radio checked */
+input[type="radio"]:checked:before {
+  content: "\25CF";
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #808080;
+}
+
+/* radio checked hover*/
+input[type="radio"]:checked:before {
+  content: "\25CF";
+  font-size: 1rem;
+  line-height: 1rem;
+  color: #808080;
+}
+
+/* YAML block */
+pre.md-meta-block,
+pre.md-meta-block:active {
+  background-color: var(--color-2);
+  box-shadow: 0px 0px 10px var(--color-3);
+  border-radius: 6px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* sidebar and outline */
+.pin-outline .outline-active {
+  color: var(--color-main);
+}
