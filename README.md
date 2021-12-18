@@ -12,6 +12,10 @@
 
 大家好，我是坚果，目前是华为云享专家，51CTO博客首席体验官，专注于大前端技术的分享，包括Flutter,小程序,安卓，VUE，JavaScript。
 
+开源不易，点个关注。
+
+![image-20211218172312425](https://luckly007.oss-cn-beijing.aliyuncs.com/images/image-20211218172312425.png)
+
 
 ___
 
